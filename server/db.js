@@ -28,6 +28,20 @@ db.exec(`
     mensagem TEXT NOT NULL,
     criado_em TEXT NOT NULL DEFAULT (datetime('now'))
   );
+
+  CREATE TABLE IF NOT EXISTS notificacoes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    canal TEXT NOT NULL,
+    destinatario TEXT NOT NULL,
+    assunto TEXT,
+    corpo TEXT NOT NULL,
+    origem TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'pendente',
+    tentativas INTEGER NOT NULL DEFAULT 0,
+    erro TEXT,
+    criado_em TEXT NOT NULL DEFAULT (datetime('now')),
+    enviado_em TEXT
+  );
 `);
 
 module.exports = db;

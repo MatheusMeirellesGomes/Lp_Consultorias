@@ -2,7 +2,7 @@ require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const db = require('./db');
-const { notificarNovoCadastro, notificarNovoContato } = require('./mailer');
+const { enfileirarCadastro, enfileirarContato } = require('./queue');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,7 +14,7 @@ function isEmailValido(email) {
   return typeof email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-app.post('/api/cadastro', async (req, res) => {
+app.post('/api/cadastro', (req, res) => {
   const { nome, email, telefone, interesse, mensagem } = req.body || {};
 
   if (!nome || !isEmailValido(email)) {
@@ -34,17 +34,12 @@ app.post('/api/cadastro', async (req, res) => {
   });
 
   const cliente = { id: info.lastInsertRowid, nome, email, telefone, interesse, mensagem };
-
-  try {
-    await notificarNovoCadastro(cliente);
-  } catch (e) {
-    console.error('[mailer] falha ao enviar e-mail de cadastro:', e.message);
-  }
+  enfileirarCadastro(cliente);
 
   res.status(201).json({ ok: true, id: cliente.id });
 });
 
-app.post('/api/contato', async (req, res) => {
+app.post('/api/contato', (req, res) => {
   const { nome, email, telefone, mensagem } = req.body || {};
 
   if (!nome || !isEmailValido(email) || !mensagem) {
@@ -58,12 +53,7 @@ app.post('/api/contato', async (req, res) => {
   const info = stmt.run({ nome, email, telefone: telefone || null, mensagem });
 
   const contato = { id: info.lastInsertRowid, nome, email, telefone, mensagem };
-
-  try {
-    await notificarNovoContato(contato);
-  } catch (e) {
-    console.error('[mailer] falha ao enviar e-mail de contato:', e.message);
-  }
+  enfileirarContato(contato);
 
   res.status(201).json({ ok: true, id: contato.id });
 });

@@ -5,7 +5,9 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "dev": "node --watch server/index.js"
+    "dev": "node --watch server/index.js",
+    "worker": "node server/worker.js",
+    "dev:worker": "node --watch server/worker.js"
   },
   "dependencies": {
     "better-sqlite3": "^11.9.1",
