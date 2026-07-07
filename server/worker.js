@@ -6,17 +6,6 @@ const { getWhatsAppClient } = require('./services/whatsapp');
 const INTERVALO_MS = 5000;
 const MAX_TENTATIVAS = 3;
 
-const buscarPendentesStmt = db.prepare(`
-  SELECT * FROM notificacoes WHERE status = 'pendente' ORDER BY id ASC LIMIT 5
-`);
-const marcarProcessandoStmt = db.prepare(`UPDATE notificacoes SET status = 'processando' WHERE id = ?`);
-const marcarEnviadoStmt = db.prepare(`
-  UPDATE notificacoes SET status = 'enviado', enviado_em = datetime('now') WHERE id = ?
-`);
-const marcarFalhaStmt = db.prepare(`
-  UPDATE notificacoes SET status = ?, tentativas = ?, erro = ? WHERE id = ?
-`);
-
 async function enviar(item) {
   if (item.canal === 'email') {
     await sendMail({ to: item.destinatario, subject: item.assunto, html: item.corpo });
@@ -29,18 +18,28 @@ async function enviar(item) {
 }
 
 async function processarPendentes() {
-  const pendentes = buscarPendentesStmt.all();
+  const pendentes = await db.notificacao.findMany({
+    where: { status: 'pendente' },
+    orderBy: { id: 'asc' },
+    take: 5,
+  });
 
   for (const item of pendentes) {
-    marcarProcessandoStmt.run(item.id);
+    await db.notificacao.update({ where: { id: item.id }, data: { status: 'processando' } });
     try {
       await enviar(item);
-      marcarEnviadoStmt.run(item.id);
+      await db.notificacao.update({
+        where: { id: item.id },
+        data: { status: 'enviado', enviadoEm: new Date() },
+      });
       console.log(`[WORKER] ✅ ${item.canal} → ${item.destinatario} (${item.origem})`);
     } catch (erro) {
       const tentativas = item.tentativas + 1;
       const status = tentativas >= MAX_TENTATIVAS ? 'erro' : 'pendente';
-      marcarFalhaStmt.run(status, tentativas, erro.message, item.id);
+      await db.notificacao.update({
+        where: { id: item.id },
+        data: { status, tentativas, erro: erro.message },
+      });
       console.error(`[WORKER] ❌ ${item.canal} → ${item.destinatario} (tentativa ${tentativas}):`, erro.message);
     }
   }

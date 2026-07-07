@@ -20,29 +20,43 @@
                 <div id="slogan">
                     <h2 data-lang="pt">Crie sua conta</h2>
                     <h2 data-lang="en" style="display:none;">Create your account</h2>
+                    <h2 data-lang="es" style="display:none;">Cree su cuenta</h2>
+                    <h2 data-lang="fr" style="display:none;">Créez votre compte</h2>
                 </div>
 
                 <div id="language">
-                    <button onclick="setLanguage('pt')">PT</button>
-                    <button onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang-btn="pt" onclick="setLanguage('pt')">PT</button>
+                    <button class="lang-btn" data-lang-btn="en" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang-btn="es" onclick="setLanguage('es')">ES</button>
+                    <button class="lang-btn" data-lang-btn="fr" onclick="setLanguage('fr')">FR</button>
                 </div>
 
                 <form id="form-cadastro" class="form">
                     <input type="text" name="nome" placeholder="Nome completo" required>
                     <input type="email" name="email" placeholder="E-mail" required>
                     <input type="tel" name="telefone" placeholder="Telefone / WhatsApp">
-                    <select name="interesse">
-                        <option value="" data-lang="pt">Selecione seu interesse</option>
-                        <option value="" data-lang="en" style="display:none;">Select your interest</option>
-                        <option value="assessoria-imprensa">Assessoria de Imprensa Internacional</option>
-                        <option value="artigos-autoria">Artigos de Autoria</option>
-                        <option value="cartas-estrategicas">Cartas Estratégicas</option>
-                        <option value="documentacao">Documentação Profissional</option>
+                    <select name="interesse" class="select-i18n">
+                        <option value=""
+                            data-i18n='{"pt":"Selecione seu interesse","en":"Select your interest","es":"Seleccione su interés","fr":"Sélectionnez votre intérêt"}'>Selecione seu interesse</option>
+
+                        <option value="assessoria-imprensa"
+                            data-i18n='{"pt":"Assessoria de Imprensa Internacional","en":"International Press Advisory","es":"Asesoría de Prensa Internacional","fr":"Conseil en Relations Presse Internationales"}'>Assessoria de Imprensa Internacional</option>
+
+                        <option value="artigos-autoria"
+                            data-i18n='{"pt":"Artigos de Autoria","en":"Authored Articles","es":"Artículos de Autoría","fr":"Articles Signés"}'>Artigos de Autoria</option>
+
+                        <option value="cartas-estrategicas"
+                            data-i18n='{"pt":"Cartas Estratégicas","en":"Strategic Letters","es":"Cartas Estratégicas","fr":"Lettres Stratégiques"}'>Cartas Estratégicas</option>
+
+                        <option value="documentacao"
+                            data-i18n='{"pt":"Documentação Profissional","en":"Professional Documentation","es":"Documentación Profesional","fr":"Documentation Professionnelle"}'>Documentação Profissional</option>
                     </select>
                     <textarea name="mensagem" placeholder="Conte um pouco sobre seu objetivo" rows="3"></textarea>
 
                     <button class="btn btn-primary" type="submit" data-lang="pt">Criar Conta</button>
                     <button class="btn btn-primary" type="submit" data-lang="en" style="display:none;">Create Account</button>
+                    <button class="btn btn-primary" type="submit" data-lang="es" style="display:none;">Crear Cuenta</button>
+                    <button class="btn btn-primary" type="submit" data-lang="fr" style="display:none;">Créer un Compte</button>
 
                     <p class="form-feedback" id="cadastro-feedback"></p>
                 </form>
@@ -50,6 +64,8 @@
                 <div id="actions">
                     <button onclick="entrarComoVisitante()" data-lang="pt">Entrar como Visitante</button>
                     <button onclick="entrarComoVisitante()" data-lang="en" style="display:none;">Continue as Guest</button>
+                    <button onclick="entrarComoVisitante()" data-lang="es" style="display:none;">Entrar como Invitado</button>
+                    <button onclick="entrarComoVisitante()" data-lang="fr" style="display:none;">Continuer en tant qu'invité</button>
                 </div>
             </article>
 
@@ -57,14 +73,24 @@
                 <div id="slogan">
                     <h2 data-lang="pt">Você está navegando como visitante</h2>
                     <h2 data-lang="en" style="display:none;">You're browsing as a guest</h2>
+                    <h2 data-lang="es" style="display:none;">Estás navegando como invitado</h2>
+                    <h2 data-lang="fr" style="display:none;">Vous naviguez en tant qu'invité</h2>
+
                     <p data-lang="pt">Sem cadastro você pode conhecer nossos serviços, mas não recebe atualizações por e-mail.</p>
                     <p data-lang="en" style="display:none;">Without an account you can explore our services, but you won't receive e-mail updates.</p>
+                    <p data-lang="es" style="display:none;">Sin registrarte puedes conocer nuestros servicios, pero no recibirás actualizaciones por correo electrónico.</p>
+                    <p data-lang="fr" style="display:none;">Sans inscription, vous pouvez découvrir nos services, mais vous ne recevrez pas de mises à jour par e-mail.</p>
                 </div>
                 <div id="actions">
                     <a class="btn btn-primary" href="index.html#servicos" data-lang="pt">Ver Serviços</a>
                     <a class="btn btn-primary" href="index.html#servicos" data-lang="en" style="display:none;">View Services</a>
+                    <a class="btn btn-primary" href="index.html#servicos" data-lang="es" style="display:none;">Ver Servicios</a>
+                    <a class="btn btn-primary" href="index.html#servicos" data-lang="fr" style="display:none;">Voir les Services</a>
+
                     <a class="btn btn-secondary" href="index.html#contato" data-lang="pt">Falar Conosco</a>
                     <a class="btn btn-secondary" href="index.html#contato" data-lang="en" style="display:none;">Contact Us</a>
+                    <a class="btn btn-secondary" href="index.html#contato" data-lang="es" style="display:none;">Hablar con Nosotros</a>
+                    <a class="btn btn-secondary" href="index.html#contato" data-lang="fr" style="display:none;">Nous Contacter</a>
                 </div>
             </article>
 

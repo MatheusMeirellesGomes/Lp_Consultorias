@@ -1,7 +1,40 @@
+const IDIOMAS = ['pt', 'en', 'es', 'fr'];
+
+const MENSAGENS_SUCESSO = {
+  cadastro: {
+    pt: 'Cadastro realizado! Você receberá uma confirmação em instantes.',
+    en: 'Registration complete! You will receive a confirmation shortly.',
+    es: '¡Registro realizado! Recibirá una confirmación en instantes.',
+    fr: 'Inscription réalisée ! Vous recevrez une confirmation sous peu.',
+  },
+  contato: {
+    pt: 'Mensagem enviada! Retornaremos em breve.',
+    en: 'Message sent! We will get back to you shortly.',
+    es: '¡Mensaje enviado! Nos pondremos en contacto en breve.',
+    fr: 'Message envoyé ! Nous vous répondrons sous peu.',
+  },
+};
+
+let idiomaAtual = 'pt';
+
 function setLanguage(lang) {
+  if (!IDIOMAS.includes(lang)) return;
+  idiomaAtual = lang;
+
   document.querySelectorAll('[data-lang]').forEach((el) => {
     el.style.display = el.getAttribute('data-lang') === lang ? '' : 'none';
   });
+
+  document.querySelectorAll('option[data-i18n]').forEach((opt) => {
+    const traducoes = JSON.parse(opt.getAttribute('data-i18n'));
+    if (traducoes[lang]) opt.textContent = traducoes[lang];
+  });
+
+  document.querySelectorAll('[data-lang-btn]').forEach((el) => {
+    el.classList.toggle('ativo', el.getAttribute('data-lang-btn') === lang);
+  });
+
+  document.documentElement.lang = lang;
   localStorage.setItem('lp-lang', lang);
 }
 
@@ -14,7 +47,7 @@ function entrarComoVisitante() {
   }
 }
 
-async function enviarFormulario(form, url, feedbackEl, mensagemSucesso) {
+async function enviarFormulario(form, url, feedbackEl, mensagensSucesso) {
   const dados = Object.fromEntries(new FormData(form).entries());
   feedbackEl.textContent = '';
   feedbackEl.className = 'form-feedback';
@@ -31,7 +64,7 @@ async function enviarFormulario(form, url, feedbackEl, mensagemSucesso) {
       throw new Error(resultado.erro || 'Não foi possível enviar. Tente novamente.');
     }
 
-    feedbackEl.textContent = mensagemSucesso;
+    feedbackEl.textContent = mensagensSucesso[idiomaAtual] || mensagensSucesso.pt;
     feedbackEl.classList.add('sucesso');
     form.reset();
   } catch (erro) {
@@ -57,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formCadastro,
         '/api/cadastro',
         document.getElementById('cadastro-feedback'),
-        'Cadastro realizado! Você receberá um e-mail de confirmação em instantes.'
+        MENSAGENS_SUCESSO.cadastro
       );
     });
   }
@@ -70,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formContato,
         '/api/contato',
         document.getElementById('contato-feedback'),
-        'Mensagem enviada! Retornaremos em breve.'
+        MENSAGENS_SUCESSO.contato
       );
     });
   }

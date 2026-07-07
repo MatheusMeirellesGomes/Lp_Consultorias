@@ -7,12 +7,16 @@
     "start": "node server/index.js",
     "dev": "node --watch server/index.js",
     "worker": "node server/worker.js",
-    "dev:worker": "node --watch server/worker.js"
+    "dev:worker": "node --watch server/worker.js",
+    "studio": "prisma studio"
   },
   "dependencies": {
-    "better-sqlite3": "^11.9.1",
+    "@prisma/client": "^6.19.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.2",
     "nodemailer": "^9.0.3"
+  },
+  "devDependencies": {
+    "prisma": "^6.19.3"
   }
 }

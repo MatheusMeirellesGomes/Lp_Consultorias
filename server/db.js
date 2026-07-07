@@ -1,47 +1,5 @@
-const path = require('path');
-const fs = require('fs');
-const Database = require('better-sqlite3');
+const { PrismaClient } = require('@prisma/client');
 
-const dataDir = path.join(__dirname, '..', 'data');
-if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
+const prisma = new PrismaClient();
 
-const db = new Database(path.join(dataDir, 'lp.sqlite'));
-db.pragma('journal_mode = WAL');
-
-db.exec(`
-  CREATE TABLE IF NOT EXISTS clientes (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome TEXT NOT NULL,
-    email TEXT NOT NULL,
-    telefone TEXT,
-    interesse TEXT,
-    mensagem TEXT,
-    origem TEXT NOT NULL DEFAULT 'cadastro',
-    criado_em TEXT NOT NULL DEFAULT (datetime('now'))
-  );
-
-  CREATE TABLE IF NOT EXISTS contatos (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome TEXT NOT NULL,
-    email TEXT NOT NULL,
-    telefone TEXT,
-    mensagem TEXT NOT NULL,
-    criado_em TEXT NOT NULL DEFAULT (datetime('now'))
-  );
-
-  CREATE TABLE IF NOT EXISTS notificacoes (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    canal TEXT NOT NULL,
-    destinatario TEXT NOT NULL,
-    assunto TEXT,
-    corpo TEXT NOT NULL,
-    origem TEXT NOT NULL,
-    status TEXT NOT NULL DEFAULT 'pendente',
-    tentativas INTEGER NOT NULL DEFAULT 0,
-    erro TEXT,
-    criado_em TEXT NOT NULL DEFAULT (datetime('now')),
-    enviado_em TEXT
-  );
-`);
-
-module.exports = db;
+module.exports = prisma;

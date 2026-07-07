@@ -14,46 +14,40 @@ function isEmailValido(email) {
   return typeof email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-app.post('/api/cadastro', (req, res) => {
+app.post('/api/cadastro', async (req, res) => {
   const { nome, email, telefone, interesse, mensagem } = req.body || {};
 
   if (!nome || !isEmailValido(email)) {
     return res.status(400).json({ erro: 'Nome e e-mail válido são obrigatórios.' });
   }
 
-  const stmt = db.prepare(`
-    INSERT INTO clientes (nome, email, telefone, interesse, mensagem)
-    VALUES (@nome, @email, @telefone, @interesse, @mensagem)
-  `);
-  const info = stmt.run({
-    nome,
-    email,
-    telefone: telefone || null,
-    interesse: interesse || null,
-    mensagem: mensagem || null,
+  const cliente = await db.cliente.create({
+    data: {
+      nome,
+      email,
+      telefone: telefone || null,
+      interesse: interesse || null,
+      mensagem: mensagem || null,
+    },
   });
 
-  const cliente = { id: info.lastInsertRowid, nome, email, telefone, interesse, mensagem };
-  enfileirarCadastro(cliente);
+  await enfileirarCadastro(cliente);
 
   res.status(201).json({ ok: true, id: cliente.id });
 });
 
-app.post('/api/contato', (req, res) => {
+app.post('/api/contato', async (req, res) => {
   const { nome, email, telefone, mensagem } = req.body || {};
 
   if (!nome || !isEmailValido(email) || !mensagem) {
     return res.status(400).json({ erro: 'Nome, e-mail válido e mensagem são obrigatórios.' });
   }
 
-  const stmt = db.prepare(`
-    INSERT INTO contatos (nome, email, telefone, mensagem)
-    VALUES (@nome, @email, @telefone, @mensagem)
-  `);
-  const info = stmt.run({ nome, email, telefone: telefone || null, mensagem });
+  const contato = await db.contato.create({
+    data: { nome, email, telefone: telefone || null, mensagem },
+  });
 
-  const contato = { id: info.lastInsertRowid, nome, email, telefone, mensagem };
-  enfileirarContato(contato);
+  await enfileirarContato(contato);
 
   res.status(201).json({ ok: true, id: contato.id });
 });
