@@ -1,0 +1,152 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GARANTE TELA CHEIA */
+html, body {
+    height: 100%;
+}
+
+/* FUNDO FULL SCREEN */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: url('../img/background.jpg') no-repeat center center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+/* OVERLAY ESCURO */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+/* MAIN */
+main {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTAINER CENTRAL */
+.container {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 40px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+
+    width: 90%;
+    max-width: 400px;
+
+    text-align: center;
+    color: #fff;
+}
+
+/* LOGO */
+#logo img {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+/* ARTICLE */
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* SLOGAN */
+#slogan h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #ddd;
+}
+
+/* IDIOMA */
+#language p {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+#language button {
+    background: transparent;
+    border: 1px solid #aaa;
+    color: #fff;
+    padding: 8px 14px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#language button:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+}
+
+/* AÇÕES */
+#actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* BOTÕES */
+#actions button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+/* BOTÃO PRINCIPAL */
+#actions button:first-child {
+    background-color: #d4af37;
+    color: #000;
+    font-weight: bold;
+}
+
+#actions button:first-child:hover {
+    background-color: #b8962e;
+}
+
+/* BOTÃO SECUNDÁRIO */
+#actions button:last-child {
+    background: transparent;
+    border: 1px solid #aaa;
+    color: #fff;
+}
+
+#actions button:last-child:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+}
+
+/* RESPONSIVO */
+@media (max-width: 500px) {
+    .container {
+        padding: 25px 20px;
+    }
+
+    #logo img {
+        width: 130px;
+    }
+}

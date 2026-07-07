@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lima & Perillo Consulting</title>
+
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+   <main>
+
+    <div class="container">
+
+        <!-- LOGO -->
+        <div id="logo">
+            <img src="img/logo.jpeg" alt="Lima & Perillo">
+        </div>
+
+        <article>
+
+            <!-- SLOGAN -->
+            <div id="slogan">
+                <h2 data-lang="pt">Soluções jurídicas com estratégia e confiança</h2>
+                <h2 data-lang="en" style="display:none;">Strategic and reliable legal solutions</h2>
+            </div>
+
+            <!-- IDIOMA -->
+            <div id="language">
+                <p>Escolha seu idioma / Choose your language</p>
+                <button onclick="setLanguage('pt')">Português</button>
+                <button onclick="setLanguage('en')">English</button>
+            </div>
+
+            <!-- AÇÕES -->
+            <div id="actions">
+                <button onclick="window.location.href='cadastro.html'">
+                    Criar Conta
+                </button>
+
+                <button onclick="entrarComoVisitante()">
+                    Entrar como Visitante
+                </button>
+            </div>
+
+        </article>
+
+    </div>
+
+</main>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
