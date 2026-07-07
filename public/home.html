@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>LP Consultorias</title>
+    <meta name="description" content="LP Consultorias — assessoria estratégica e documentação profissional para processos internacionais.">
+    <link rel="icon" href="img/logo.jpeg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="site">
+
+    <!-- CABEÇALHO -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="home.html" id="logo"><img src="img/logo.jpeg" alt="LP Consultorias"><span>LP Consultorias</span></a>
+
+            <nav class="main-nav">
+                <a href="#sobre" data-lang="pt">Sobre Nós</a>
+                <a href="#sobre" data-lang="en" style="display:none;">About Us</a>
+                <a href="#sobre" data-lang="es" style="display:none;">Quiénes Somos</a>
+                <a href="#sobre" data-lang="fr" style="display:none;">À Propos</a>
+
+                <a href="#servicos" data-lang="pt">Serviços</a>
+                <a href="#servicos" data-lang="en" style="display:none;">Services</a>
+                <a href="#servicos" data-lang="es" style="display:none;">Servicios</a>
+                <a href="#servicos" data-lang="fr" style="display:none;">Services</a>
+
+                <a href="#metodologia" data-lang="pt">Metodologia</a>
+                <a href="#metodologia" data-lang="en" style="display:none;">Methodology</a>
+                <a href="#metodologia" data-lang="es" style="display:none;">Metodología</a>
+                <a href="#metodologia" data-lang="fr" style="display:none;">Méthodologie</a>
+
+                <a href="#contato" data-lang="pt">Contato</a>
+                <a href="#contato" data-lang="en" style="display:none;">Contact</a>
+                <a href="#contato" data-lang="es" style="display:none;">Contacto</a>
+                <a href="#contato" data-lang="fr" style="display:none;">Contact</a>
+            </nav>
+
+            <div class="topbar-actions">
+                <button class="lang-btn" data-lang-btn="pt" onclick="setLanguage('pt')">PT</button>
+                <button class="lang-btn" data-lang-btn="en" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" data-lang-btn="es" onclick="setLanguage('es')">ES</button>
+                <button class="lang-btn" data-lang-btn="fr" onclick="setLanguage('fr')">FR</button>
+
+                <span id="conta-info" style="display:none;"></span>
+
+                <a class="btn btn-outline area-cliente-btn" href="index.html" data-lang="pt">Entrar</a>
+                <a class="btn btn-outline area-cliente-btn" href="index.html" data-lang="en" style="display:none;">Log In</a>
+                <a class="btn btn-outline area-cliente-btn" href="index.html" data-lang="es" style="display:none;">Iniciar Sesión</a>
+                <a class="btn btn-outline area-cliente-btn" href="index.html" data-lang="fr" style="display:none;">Se Connecter</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero hero-cinematic">
+            <div class="hero-inner">
+                <div class="hero-text reveal">
+                    <h1 data-lang="pt">Sua carreira merece uma apresentação à altura da sua trajetória.</h1>
+                    <h1 data-lang="en" style="display:none;">Your career deserves a presentation worthy of your journey.</h1>
+                    <h1 data-lang="es" style="display:none;">Su carrera merece una presentación a la altura de su trayectoria.</h1>
+                    <h1 data-lang="fr" style="display:none;">Votre carrière mérite une présentation à la hauteur de votre parcours.</h1>
+
+                    <p class="lead" data-lang="pt">Cada conquista conta uma história. A LP Consultorias ajuda você a contar essa história para o mundo com estratégia, clareza e sofisticação.</p>
+                    <p class="lead" data-lang="en" style="display:none;">Every achievement tells a story. LP Consultorias helps you tell that story to the world with strategy, clarity, and sophistication.</p>
+                    <p class="lead" data-lang="es" style="display:none;">Cada logro cuenta una historia. LP Consultorias le ayuda a contar esa historia al mundo con estrategia, claridad y sofisticación.</p>
+                    <p class="lead" data-lang="fr" style="display:none;">Chaque réussite raconte une histoire. LP Consultorias vous aide à raconter cette histoire au monde avec stratégie, clarté et sophistication.</p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" target="_blank" rel="noopener"
+                           href="https://wa.me/5561995299277?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consultoria%20com%20a%20LP%20Consultorias."
+                           data-lang="pt">Agendar uma Consultoria</a>
+                        <a class="btn btn-primary" target="_blank" rel="noopener"
+                           href="https://wa.me/5561995299277?text=Hello!%20I%20would%20like%20to%20schedule%20a%20consultation%20with%20LP%20Consultorias."
+                           data-lang="en" style="display:none;">Schedule a Consultation</a>
+                        <a class="btn btn-primary" target="_blank" rel="noopener"
+                           href="https://wa.me/5561995299277?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20agendar%20una%20consultor%C3%ADa%20con%20LP%20Consultorias."
+                           data-lang="es" style="display:none;">Agendar una Consultoría</a>
+                        <a class="btn btn-primary" target="_blank" rel="noopener"
+                           href="https://wa.me/5561995299277?text=Bonjour%20!%20Je%20souhaiterais%20planifier%20une%20consultation%20avec%20LP%20Consultorias."
+                           data-lang="fr" style="display:none;">Planifier une Consultation</a>
+
+                        <a class="btn btn-outline hero-outline" href="index.html" data-lang="pt">Criar Conta</a>
+                        <a class="btn btn-outline hero-outline" href="index.html" data-lang="en" style="display:none;">Create Account</a>
+                        <a class="btn btn-outline hero-outline" href="index.html" data-lang="es" style="display:none;">Crear Cuenta</a>
+                        <a class="btn btn-outline hero-outline" href="index.html" data-lang="fr" style="display:none;">Créer un Compte</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NÚMEROS -->
+        <section class="numbers">
+            <div class="numbers-inner">
+                <div class="number-card reveal">
+                    <svg class="number-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.6"/>
+                        <ellipse cx="16" cy="16" rx="12" ry="5" stroke="currentColor" stroke-width="1.2"/>
+                        <line x1="4" y1="16" x2="28" y2="16" stroke="currentColor" stroke-width="1.2"/>
+                    </svg>
+                    <span class="number">15+</span>
+                    <span data-lang="pt">países atendidos</span>
+                    <span data-lang="en" style="display:none;">countries served</span>
+                    <span data-lang="es" style="display:none;">países atendidos</span>
+                    <span data-lang="fr" style="display:none;">pays desservis</span>
+                </div>
+                <div class="number-card reveal">
+                    <svg class="number-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/>
+                        <circle cx="22" cy="13" r="3.5" stroke="currentColor" stroke-width="1.6"/>
+                        <path d="M4 27c0-5 3.5-8 8-8s8 3 8 8" stroke="currentColor" stroke-width="1.6"/>
+                        <path d="M20 19c3.8.3 6 3 6 8" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+                    <span class="number">1.000+</span>
+                    <span data-lang="pt">clientes atendidos</span>
+                    <span data-lang="en" style="display:none;">clients served</span>
+                    <span data-lang="es" style="display:none;">clientes atendidos</span>
+                    <span data-lang="fr" style="display:none;">clients servis</span>
+                </div>
+                <div class="number-card reveal">
+                    <svg class="number-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="6" y="5" width="20" height="24" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                        <path d="M11 12h10M11 17h10M11 22h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                    <span class="number">3.500+</span>
+                    <span data-lang="pt">projetos realizados</span>
+                    <span data-lang="en" style="display:none;">projects delivered</span>
+                    <span data-lang="es" style="display:none;">proyectos realizados</span>
+                    <span data-lang="fr" style="display:none;">projets réalisés</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section id="sobre" class="section section-split">
+            <div class="section-split-text reveal">
+                <h2 data-lang="pt">Quem Somos</h2>
+                <h2 data-lang="en" style="display:none;">Who We Are</h2>
+                <h2 data-lang="es" style="display:none;">Quiénes Somos</h2>
+                <h2 data-lang="fr" style="display:none;">Qui Sommes-Nous</h2>
+
+                <p data-lang="pt">A LP Consultorias é uma boutique internacional especializada em construir reputação, estratégia e documentação de alto nível para profissionais que buscam reconhecimento e oportunidades globais. Atuamos com transparência, eficiência e um olhar estratégico sobre cada trajetória.</p>
+                <p data-lang="en" style="display:none;">LP Consultorias is an international boutique specialized in building reputation, strategy, and high-level documentation for professionals seeking global recognition and opportunities. We work with transparency, efficiency, and a strategic view of every career path.</p>
+                <p data-lang="es" style="display:none;">LP Consultorias es una boutique internacional especializada en construir reputación, estrategia y documentación de alto nivel para profesionales que buscan reconocimiento y oportunidades globales. Trabajamos con transparencia, eficiencia y una mirada estratégica sobre cada trayectoria.</p>
+                <p data-lang="fr" style="display:none;">LP Consultorias est une boutique internationale spécialisée dans la réputation, la stratégie et la documentation de haut niveau pour les professionnels en quête de reconnaissance et d'opportunités mondiales. Nous travaillons avec transparence, efficacité et une vision stratégique de chaque parcours.</p>
+
+                <p class="disclaimer" data-lang="pt"><strong>Atenção:</strong> não atuamos como escritório de imigração. Nosso trabalho é de assessoria estratégica e documental.</p>
+                <p class="disclaimer" data-lang="en" style="display:none;"><strong>Please note:</strong> we do not operate as an immigration law firm. Our work is strategic and documentation advisory.</p>
+                <p class="disclaimer" data-lang="es" style="display:none;"><strong>Atención:</strong> no operamos como despacho de inmigración. Nuestro trabajo es de asesoría estratégica y documental.</p>
+                <p class="disclaimer" data-lang="fr" style="display:none;"><strong>Attention :</strong> nous n'exerçons pas en tant que cabinet d'immigration. Notre travail est un conseil stratégique et documentaire.</p>
+            </div>
+            <div class="section-split-visual reveal">
+                <svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="20" y="20" width="240" height="240" rx="16" stroke="#B58C5E" stroke-width="1.5" opacity="0.5"/>
+                    <rect x="50" y="50" width="180" height="180" rx="12" stroke="#042D2F" stroke-width="1" opacity="0.3"/>
+                    <path d="M90 150l30 30 70-70" stroke="#B58C5E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="140" cy="140" r="90" stroke="#042D2F" stroke-width="1" opacity="0.25"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section id="servicos" class="section section-alt">
+            <h2 class="reveal" data-lang="pt">O Que Fazemos</h2>
+            <h2 class="reveal" data-lang="en" style="display:none;">What We Do</h2>
+            <h2 class="reveal" data-lang="es" style="display:none;">Qué Hacemos</h2>
+            <h2 class="reveal" data-lang="fr" style="display:none;">Ce Que Nous Faisons</h2>
+
+            <div class="cards">
+                <div class="card reveal">
+                    <svg class="card-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="8" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                        <path d="M4 12h24M9 17h6M9 21h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                    </svg>
+                    <h3 data-lang="pt">Assessoria de Imprensa Internacional</h3>
+                    <h3 data-lang="en" style="display:none;">International Press Advisory</h3>
+                    <h3 data-lang="es" style="display:none;">Asesoría de Prensa Internacional</h3>
+                    <h3 data-lang="fr" style="display:none;">Conseil en Relations Presse Internationales</h3>
+                    <p data-lang="pt">Criação de artigos e ampliação de visibilidade profissional em veículos internacionais.</p>
+                    <p data-lang="en" style="display:none;">Article creation and expanded professional visibility across international media outlets.</p>
+                    <p data-lang="es" style="display:none;">Creación de artículos y ampliación de visibilidad profesional en medios internacionales.</p>
+                    <p data-lang="fr" style="display:none;">Création d'articles et développement de la visibilité professionnelle dans les médias internationaux.</p>
+                </div>
+                <div class="card reveal">
+                    <svg class="card-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 24l-2 4 4-2 15-15-2-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                        <path d="M20 6l2 2" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+                    <h3 data-lang="pt">Artigos de Autoria</h3>
+                    <h3 data-lang="en" style="display:none;">Authored Articles</h3>
+                    <h3 data-lang="es" style="display:none;">Artículos de Autoría</h3>
+                    <h3 data-lang="fr" style="display:none;">Articles Signés</h3>
+                    <p data-lang="pt">Produção de conteúdo autoral que demonstra expertise e autoridade no seu campo.</p>
+                    <p data-lang="en" style="display:none;">Original content that demonstrates expertise and authority in your field.</p>
+                    <p data-lang="es" style="display:none;">Producción de contenido de autoría que demuestra experiencia y autoridad en su campo.</p>
+                    <p data-lang="fr" style="display:none;">Production de contenu original démontrant l'expertise et l'autorité dans votre domaine.</p>
+                </div>
+                <div class="card reveal">
+                    <svg class="card-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 10l10 7 10-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="4" y="7" width="24" height="19" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                    </svg>
+                    <h3 data-lang="pt">Cartas Estratégicas</h3>
+                    <h3 data-lang="en" style="display:none;">Strategic Letters</h3>
+                    <h3 data-lang="es" style="display:none;">Cartas Estratégicas</h3>
+                    <h3 data-lang="fr" style="display:none;">Lettres Stratégiques</h3>
+                    <p data-lang="pt">Cartas de recomendação personalizadas, alinhadas à estratégia de cada cliente.</p>
+                    <p data-lang="en" style="display:none;">Personalized recommendation letters aligned with each client's strategy.</p>
+                    <p data-lang="es" style="display:none;">Cartas de recomendación personalizadas, alineadas con la estrategia de cada cliente.</p>
+                    <p data-lang="fr" style="display:none;">Lettres de recommandation personnalisées, alignées sur la stratégie de chaque client.</p>
+                </div>
+                <div class="card reveal">
+                    <svg class="card-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="7" y="4" width="18" height="24" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                        <path d="M11 11h10M11 15h10M11 19h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                        <circle cx="16" cy="24.5" r="0.8" fill="currentColor"/>
+                    </svg>
+                    <h3 data-lang="pt">Documentação Profissional</h3>
+                    <h3 data-lang="en" style="display:none;">Professional Documentation</h3>
+                    <h3 data-lang="es" style="display:none;">Documentación Profesional</h3>
+                    <h3 data-lang="fr" style="display:none;">Documentation Professionnelle</h3>
+                    <p data-lang="pt">Currículos internacionais, traduções e organização documental completa.</p>
+                    <p data-lang="en" style="display:none;">International résumés, translations, and complete document organization.</p>
+                    <p data-lang="es" style="display:none;">Currículums internacionales, traducciones y organización documental completa.</p>
+                    <p data-lang="fr" style="display:none;">CV internationaux, traductions et organisation documentaire complète.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- METODOLOGIA -->
+        <section id="metodologia" class="section">
+            <h2 class="reveal" data-lang="pt">Nossa Metodologia</h2>
+            <h2 class="reveal" data-lang="en" style="display:none;">Our Methodology</h2>
+            <h2 class="reveal" data-lang="es" style="display:none;">Nuestra Metodología</h2>
+            <h2 class="reveal" data-lang="fr" style="display:none;">Notre Méthodologie</h2>
+
+            <div class="steps">
+                <div class="step reveal">
+                    <span class="step-number">1</span>
+                    <h3 data-lang="pt">Análise</h3>
+                    <h3 data-lang="en" style="display:none;">Analysis</h3>
+                    <h3 data-lang="es" style="display:none;">Análisis</h3>
+                    <h3 data-lang="fr" style="display:none;">Analyse</h3>
+                </div>
+                <div class="step reveal">
+                    <span class="step-number">2</span>
+                    <h3 data-lang="pt">Estratégia</h3>
+                    <h3 data-lang="en" style="display:none;">Strategy</h3>
+                    <h3 data-lang="es" style="display:none;">Estrategia</h3>
+                    <h3 data-lang="fr" style="display:none;">Stratégie</h3>
+                </div>
+                <div class="step reveal">
+                    <span class="step-number">3</span>
+                    <h3 data-lang="pt">Desenvolvimento</h3>
+                    <h3 data-lang="en" style="display:none;">Development</h3>
+                    <h3 data-lang="es" style="display:none;">Desarrollo</h3>
+                    <h3 data-lang="fr" style="display:none;">Développement</h3>
+                </div>
+                <div class="step reveal">
+                    <span class="step-number">4</span>
+                    <h3 data-lang="pt">Entrega</h3>
+                    <h3 data-lang="en" style="display:none;">Delivery</h3>
+                    <h3 data-lang="es" style="display:none;">Entrega</h3>
+                    <h3 data-lang="fr" style="display:none;">Livraison</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="section section-alt">
+            <h2 class="reveal" data-lang="pt">Contato</h2>
+            <h2 class="reveal" data-lang="en" style="display:none;">Contact</h2>
+            <h2 class="reveal" data-lang="es" style="display:none;">Contacto</h2>
+            <h2 class="reveal" data-lang="fr" style="display:none;">Contact</h2>
+
+            <p data-lang="pt">Preencha o formulário abaixo ou fale diretamente conosco.</p>
+            <p data-lang="en" style="display:none;">Fill out the form below or reach us directly.</p>
+            <p data-lang="es" style="display:none;">Complete el formulario a continuación o contáctenos directamente.</p>
+            <p data-lang="fr" style="display:none;">Remplissez le formulaire ci-dessous ou contactez-nous directement.</p>
+
+            <div class="contact-grid reveal">
+                <form id="form-contato" class="form">
+                    <input type="text" name="nome" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <input type="tel" name="telefone" placeholder="Telefone / WhatsApp">
+                    <textarea name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
+                    <button class="btn btn-primary" type="submit" data-lang="pt">Enviar Mensagem</button>
+                    <button class="btn btn-primary" type="submit" data-lang="en" style="display:none;">Send Message</button>
+                    <button class="btn btn-primary" type="submit" data-lang="es" style="display:none;">Enviar Mensaje</button>
+                    <button class="btn btn-primary" type="submit" data-lang="fr" style="display:none;">Envoyer le Message</button>
+                    <p class="form-feedback" id="contato-feedback"></p>
+                </form>
+
+                <div class="contact-info">
+                    <p>
+                        <strong>WhatsApp:</strong>
+                        <a target="_blank" rel="noopener"
+                           href="https://wa.me/5561995299277?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consultoria%20com%20a%20LP%20Consultorias."
+                           data-lang="pt">+55 (61) 99529-9277</a>
+                        <a target="_blank" rel="noopener"
+                           href="https://wa.me/5561995299277?text=Hello!%20I%20would%20like%20to%20schedule%20a%20consultation%20with%20LP%20Consultorias."
+                           data-lang="en" style="display:none;">+55 (61) 99529-9277</a>
+                        <a target="_blank" rel="noopener"
+                           href="https://wa.me/5561995299277?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20agendar%20una%20consultor%C3%ADa%20con%20LP%20Consultorias."
+                           data-lang="es" style="display:none;">+55 (61) 99529-9277</a>
+                        <a target="_blank" rel="noopener"
+                           href="https://wa.me/5561995299277?text=Bonjour%20!%20Je%20souhaiterais%20planifier%20une%20consultation%20avec%20LP%20Consultorias."
+                           data-lang="fr" style="display:none;">+55 (61) 99529-9277</a>
+                    </p>
+                    <p><strong>E-mail:</strong> <a href="mailto:contato@lpconsultorias.com">contato@lpconsultorias.com</a></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <p>&copy; 2026 LP Consultorias.
+            <span data-lang="pt">Todos os direitos reservados.</span>
+            <span data-lang="en" style="display:none;">All rights reserved.</span>
+            <span data-lang="es" style="display:none;">Todos los derechos reservados.</span>
+            <span data-lang="fr" style="display:none;">Tous droits réservés.</span>
+        </p>
+    </footer>
+
+    <!-- CHAT ASSISTENTE -->
+    <div id="chat-widget"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

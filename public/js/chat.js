@@ -80,9 +80,9 @@ function chatExecutarAcao(acao) {
   if (acao === 'whatsapp') {
     window.open(CHAT_WHATSAPP_URL, '_blank', 'noopener');
   } else if (acao === 'cadastro') {
-    window.location.href = 'cadastro.html';
+    window.location.href = 'index.html';
   } else if (acao === 'servicos') {
-    window.location.href = 'index.html#servicos';
+    window.location.href = 'home.html#servicos';
   }
 }
 
@@ -139,8 +139,15 @@ function chatMontarWidget() {
 
   raiz.innerHTML = `
     <button class="chat-bubble" type="button" aria-label="Assistente virtual" onclick="chatAlternarPainel()">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4 5h16a1 1 0 011 1v10a1 1 0 01-1 1H9l-5 4v-4H4a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="24" y1="4" x2="24" y2="10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="24" cy="4" r="2.4" fill="currentColor"/>
+        <rect x="10" y="10" width="28" height="24" rx="8" stroke="currentColor" stroke-width="2.2"/>
+        <rect x="4" y="18" width="5" height="10" rx="2.5" fill="currentColor"/>
+        <rect x="39" y="18" width="5" height="10" rx="2.5" fill="currentColor"/>
+        <circle cx="18.5" cy="21" r="2.6" fill="currentColor"/>
+        <circle cx="29.5" cy="21" r="2.6" fill="currentColor"/>
+        <path d="M17 28c1.8 1.6 4 2.4 7 2.4s5.2-.8 7-2.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
       </svg>
     </button>
     <div class="chat-painel" id="chat-painel">

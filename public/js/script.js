@@ -136,7 +136,7 @@ async function enviarFormularioAuth(form, url, feedbackEl, mensagensSucesso) {
 
     feedbackEl.textContent = mensagensSucesso[idiomaAtual] || mensagensSucesso.pt;
     feedbackEl.classList.add('sucesso');
-    setTimeout(() => { window.location.href = 'index.html'; }, 900);
+    setTimeout(() => { window.location.href = 'home.html'; }, 900);
   } catch (erro) {
     feedbackEl.textContent = erro.message;
     feedbackEl.classList.add('erro');
@@ -144,11 +144,17 @@ async function enviarFormularioAuth(form, url, feedbackEl, mensagensSucesso) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const formLogin = document.getElementById('form-login');
+
+  if (formLogin && localStorage.getItem('lp-token')) {
+    window.location.href = 'home.html';
+    return;
+  }
+
   const idiomaSalvo = localStorage.getItem('lp-lang') || 'pt';
   setLanguage(idiomaSalvo);
   atualizarContaNav();
 
-  const formLogin = document.getElementById('form-login');
   if (formLogin) {
     formLogin.addEventListener('submit', (evento) => {
       evento.preventDefault();
