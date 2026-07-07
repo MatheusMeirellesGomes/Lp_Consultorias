@@ -18,7 +18,7 @@ async function sendMail({ to, subject, html }) {
     return { simulated: true };
   }
   return transporter.sendMail({
-    from: `"Lima & Perillo Consulting" <${SMTP_USER}>`,
+    from: `"LP Consultorias" <${SMTP_USER}>`,
     to,
     subject,
     html,

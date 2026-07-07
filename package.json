@@ -1,7 +1,7 @@
 {
   "name": "lima-perrillo-consulting",
   "version": "1.0.0",
-  "description": "Site institucional da Lima & Perillo Consulting com cadastro de clientes e notificações por e-mail.",
+  "description": "Site institucional da LP Consultorias com cadastro de clientes e notificações por e-mail.",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
+    "bcryptjs": "^3.0.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.3",
     "nodemailer": "^9.0.3"
   },
   "devDependencies": {

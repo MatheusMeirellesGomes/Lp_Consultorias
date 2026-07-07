@@ -7,9 +7,9 @@ function escapeHtml(value) {
 function cadastroConfirmacaoEmail(cliente) {
   const nome = escapeHtml(cliente.nome);
   return {
-    assunto: 'Recebemos seu cadastro — Lima & Perillo Consulting',
+    assunto: 'Recebemos seu cadastro — LP Consultorias',
     corpo: `<p>Olá, ${nome}!</p>
-      <p>Recebemos seu cadastro na Lima & Perillo Consulting. Nossa equipe vai analisar suas informações e entrar em contato em breve.</p>
+      <p>Recebemos seu cadastro na LP Consultorias. Nossa equipe vai analisar suas informações e entrar em contato em breve.</p>
       <p>Obrigado pela confiança.</p>`,
   };
 }
@@ -32,7 +32,7 @@ function cadastroNotificacaoAdminEmail(cliente) {
 function contatoConfirmacaoEmail(contato) {
   const nome = escapeHtml(contato.nome);
   return {
-    assunto: 'Recebemos sua mensagem — Lima & Perillo Consulting',
+    assunto: 'Recebemos sua mensagem — LP Consultorias',
     corpo: `<p>Olá, ${nome}!</p>
       <p>Recebemos sua mensagem e retornaremos em breve.</p>`,
   };
@@ -53,7 +53,7 @@ function contatoNotificacaoAdminEmail(contato) {
 }
 
 function cadastroConfirmacaoWhatsapp(cliente) {
-  return `Olá, ${cliente.nome}! Recebemos seu cadastro na Lima & Perillo Consulting. Em breve nossa equipe entra em contato. Obrigado pela confiança.`;
+  return `Olá, ${cliente.nome}! Recebemos seu cadastro na LP Consultorias. Em breve nossa equipe entra em contato. Obrigado pela confiança.`;
 }
 
 function cadastroNotificacaoAdminWhatsapp(cliente) {
@@ -61,7 +61,7 @@ function cadastroNotificacaoAdminWhatsapp(cliente) {
 }
 
 function contatoConfirmacaoWhatsapp(contato) {
-  return `Olá, ${contato.nome}! Recebemos sua mensagem na Lima & Perillo Consulting e retornaremos em breve.`;
+  return `Olá, ${contato.nome}! Recebemos sua mensagem na LP Consultorias e retornaremos em breve.`;
 }
 
 function contatoNotificacaoAdminWhatsapp(contato) {
