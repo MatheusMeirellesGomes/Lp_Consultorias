@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro — Lima & Perillo Consulting</title>
+    <link rel="icon" href="img/logo.jpeg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <main>
+        <div class="container">
+
+            <div id="logo">
+                <a href="index.html"><img src="img/logo.jpeg" alt="Lima & Perillo Consulting"></a>
+            </div>
+
+            <article id="painel-cadastro">
+                <div id="slogan">
+                    <h2 data-lang="pt">Crie sua conta</h2>
+                    <h2 data-lang="en" style="display:none;">Create your account</h2>
+                </div>
+
+                <div id="language">
+                    <button onclick="setLanguage('pt')">PT</button>
+                    <button onclick="setLanguage('en')">EN</button>
+                </div>
+
+                <form id="form-cadastro" class="form">
+                    <input type="text" name="nome" placeholder="Nome completo" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    <input type="tel" name="telefone" placeholder="Telefone / WhatsApp">
+                    <select name="interesse">
+                        <option value="" data-lang="pt">Selecione seu interesse</option>
+                        <option value="" data-lang="en" style="display:none;">Select your interest</option>
+                        <option value="assessoria-imprensa">Assessoria de Imprensa Internacional</option>
+                        <option value="artigos-autoria">Artigos de Autoria</option>
+                        <option value="cartas-estrategicas">Cartas Estratégicas</option>
+                        <option value="documentacao">Documentação Profissional</option>
+                    </select>
+                    <textarea name="mensagem" placeholder="Conte um pouco sobre seu objetivo" rows="3"></textarea>
+
+                    <button class="btn btn-primary" type="submit" data-lang="pt">Criar Conta</button>
+                    <button class="btn btn-primary" type="submit" data-lang="en" style="display:none;">Create Account</button>
+
+                    <p class="form-feedback" id="cadastro-feedback"></p>
+                </form>
+
+                <div id="actions">
+                    <button onclick="entrarComoVisitante()" data-lang="pt">Entrar como Visitante</button>
+                    <button onclick="entrarComoVisitante()" data-lang="en" style="display:none;">Continue as Guest</button>
+                </div>
+            </article>
+
+            <article id="painel-visitante" style="display:none;">
+                <div id="slogan">
+                    <h2 data-lang="pt">Você está navegando como visitante</h2>
+                    <h2 data-lang="en" style="display:none;">You're browsing as a guest</h2>
+                    <p data-lang="pt">Sem cadastro você pode conhecer nossos serviços, mas não recebe atualizações por e-mail.</p>
+                    <p data-lang="en" style="display:none;">Without an account you can explore our services, but you won't receive e-mail updates.</p>
+                </div>
+                <div id="actions">
+                    <a class="btn btn-primary" href="index.html#servicos" data-lang="pt">Ver Serviços</a>
+                    <a class="btn btn-primary" href="index.html#servicos" data-lang="en" style="display:none;">View Services</a>
+                    <a class="btn btn-secondary" href="index.html#contato" data-lang="pt">Falar Conosco</a>
+                    <a class="btn btn-secondary" href="index.html#contato" data-lang="en" style="display:none;">Contact Us</a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
