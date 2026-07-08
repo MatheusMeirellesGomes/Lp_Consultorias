@@ -404,11 +404,22 @@ body.site {
     gap: 6px;
 }
 
+.number-icon-badge {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: var(--lp-green);
+    border: 1.5px solid var(--lp-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
 .number-icon {
     width: 30px;
     height: 30px;
     color: var(--lp-gold);
-    margin-bottom: 6px;
 }
 
 .number-card .number {
@@ -473,6 +484,10 @@ body.site {
     line-height: 1.7;
     margin-bottom: 16px;
     max-width: 720px;
+}
+
+.section-alt > p {
+    max-width: 1000px;
 }
 
 .disclaimer {
